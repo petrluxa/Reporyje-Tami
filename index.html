@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Tenis Tami Řeporyje — návrhy webu</title>
+<link rel="icon" type="image/svg+xml" href="assets/logo/tami-znak.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --antracit:#24272B;--grafit:#2F3337;--grafit-2:#3B4045;--papir:#F5F2ED;--karta:#FFFFFF;
+  --oranzova:#E4602A;--oranzova-tm:#B94A1C;--oranzova-sv:#F2864F;
+  --text:#24272B;--tlumeny:#62666C;--linka:#E2DDD5;--jemna:#ECE8E1;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{overflow-x:clip;scroll-behavior:smooth}
+body{background:var(--papir);color:var(--text);font-family:'Manrope',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;font-variant-numeric:lining-nums tabular-nums}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1220px;margin:0 auto;padding:0 32px}
+
+/* úvod */
+.top{background:var(--antracit);color:#F3F0EA;position:relative;overflow:hidden}
+.top::before{content:"";position:absolute;left:50%;bottom:-62%;width:min(150vw,1900px);aspect-ratio:2/1;transform:translateX(-50%);
+  border-radius:50% 50% 0 0/100% 100% 0 0;border:1px solid rgba(243,240,234,.08);border-bottom:0;pointer-events:none}
+.top::after{content:"";position:absolute;left:50%;bottom:-70%;width:min(120vw,1500px);aspect-ratio:2/1;transform:translateX(-50%);
+  border-radius:50% 50% 0 0/100% 100% 0 0;border:1px solid rgba(228,96,42,.16);border-bottom:0;pointer-events:none}
+.top .wrap{position:relative;z-index:1;padding-top:56px;padding-bottom:64px}
+.logo{width:236px;height:auto;margin-bottom:44px}
+.top h1{font-size:clamp(40px,6.2vw,80px);font-weight:800;line-height:1.04;letter-spacing:-.025em;max-width:16ch}
+.top h1 span{color:var(--oranzova-sv)}
+.lead{max-width:720px;font-size:18px;color:rgba(243,240,234,.74);margin-top:22px}
+.meta{display:flex;flex-wrap:wrap;gap:10px 34px;margin-top:30px;font-size:14px;color:rgba(243,240,234,.6)}
+.meta b{color:#F3F0EA;font-weight:600}
+
+/* karty variant */
+main{padding:64px 0 96px}
+main h2{font-size:15px;font-weight:700;letter-spacing:.02em;margin-bottom:22px;color:var(--tlumeny)}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}
+.card{background:var(--karta);border:1px solid var(--linka);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.card:hover,.card:focus-visible{transform:translateY(-6px);border-color:#D2CBC0;box-shadow:0 40px 70px -46px rgba(36,39,43,.6)}
+.card:focus-visible{outline:2px solid var(--antracit);outline-offset:3px}
+.thumb{aspect-ratio:16/10;background:var(--jemna);position:relative;overflow:hidden;border-bottom:1px solid var(--linka)}
+.thumb img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .6s ease}
+.card:hover .thumb img{transform:scale(1.03)}
+.num{position:absolute;left:14px;bottom:14px;background:rgba(36,39,43,.86);color:#fff;font-size:12px;font-weight:700;letter-spacing:.08em;
+  padding:5px 10px;border-radius:100px}
+.card-b{padding:26px 26px 28px;display:flex;flex-direction:column;flex:1}
+.card-b h3{font-size:28px;font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-bottom:6px}
+.card-b .sub{font-size:14px;font-weight:600;color:var(--oranzova-tm);margin-bottom:14px}
+.card-b p{font-size:15px;color:var(--tlumeny)}
+.card-b p b{color:var(--text);font-weight:600}
+.sw{display:flex;gap:8px;margin-top:22px}
+.sw span{width:28px;height:28px;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(36,39,43,.14)}
+.open{margin-top:auto;padding-top:24px;font-weight:700;font-size:15px;display:flex;align-items:center;gap:8px}
+.open::after{content:"→";color:var(--oranzova);transition:transform .3s}
+.card:hover .open::after{transform:translateX(4px)}
+
+/* panely */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:72px}
+.panel{background:var(--karta);border:1px solid var(--linka);border-radius:18px;padding:32px 34px}
+.panel h2{font-size:24px;font-weight:800;letter-spacing:-.015em;color:var(--text);margin-bottom:16px}
+.panel ul{list-style:none;display:grid;gap:12px}
+.panel li{position:relative;padding-left:22px;font-size:15px;color:var(--tlumeny)}
+.panel li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--oranzova)}
+.panel.q li::before{background:var(--antracit)}
+.panel li b{color:var(--text);font-weight:600}
+
+footer{border-top:1px solid var(--linka);padding:28px 0;font-size:13.5px;color:var(--tlumeny)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+@media (max-width:860px){.two{grid-template-columns:1fr}}
+@media (max-width:680px){
+  .wrap{padding:0 20px}
+  .top .wrap{padding-top:40px;padding-bottom:48px}
+  .logo{width:190px;margin-bottom:32px}
+  .cards{grid-template-columns:1fr}
+  .panel{padding:26px 24px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <img class="logo" src="assets/logo/tami-logo-negativ.svg" alt="Tenis Tami — Tenis • Hala • Řeporyje" width="350" height="116">
+    <h1>Nový web pro <span>Tenis Tami</span> Řeporyje</h1>
+    <p class="lead">Dva návrhy úvodní stránky. Uprostřed obou je tabule obsazenosti dvorců s cenami, aby každý hned viděl,
+      kdy je volno a za kolik. Obsah je stejný, liší se náladou a tím, jak tabuli ukazují. Klikněte na kartu
+      a projděte si návrh celý, i na mobilu.</p>
+    <div class="meta">
+      <span>Areál: <b>3 antukové dvorce, v zimě hala</b></span>
+      <span>Barvy: <b>oranžová a antracit</b></span>
+      <span>Doména: <b>tenistami-reporyje.cz</b></span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h2>Dva návrhy úvodní stránky</h2>
+    <div class="cards">
+      <a class="card" href="01-antracit.html">
+        <div class="thumb"><span class="num">01</span><img src="nahled-01.jpg" alt="Náhled návrhu 01 Antracit" width="960" height="600"></div>
+        <div class="card-b">
+          <h3>Antracit</h3>
+          <div class="sub">Tmavá · tabule volných hodin</div>
+          <p>Noční a sebevědomá. <b>Odklápěcí tabule</b> jako na letišti ukazuje celý týden: každá volná hodina
+            se překlopí na svou cenu a počet volných dvorců.</p>
+          <div class="sw"><span style="background:#24272B"></span><span style="background:#3B4045"></span><span style="background:#E4602A"></span><span style="background:#F3F0EA"></span></div>
+          <span class="open">Otevřít návrh</span>
+        </div>
+      </a>
+      <a class="card" href="02-antuka.html">
+        <div class="thumb"><span class="num">02</span><img src="nahled-02.jpg" alt="Náhled návrhu 02 Antuka" width="960" height="600"></div>
+        <div class="card-b">
+          <h3>Antuka</h3>
+          <div class="sub">Světlá moderní · den na dvorcích</div>
+          <p>Čistá a přesná jako čáry na antuce. <b>Časová osa dne</b> pro všechny tři dvorce s cenovou páskou:
+            na první pohled je vidět volno i cena každé hodiny.</p>
+          <div class="sw"><span style="background:#F5F2ED"></span><span style="background:#E4602A"></span><span style="background:#24272B"></span><span style="background:#B86432"></span></div>
+          <span class="open">Otevřít návrh</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="two">
+      <section class="panel">
+        <h2>Společné pro oba návrhy</h2>
+        <ul>
+          <li><b>Obsazenost a ceny</b> na celý týden přímo na úvodní stránce, klik na volnou hodinu nabídne zavolání.</li>
+          <li><b>Ceník zima i léto</b> včetně cen pro členy klubu a permanentek, provozní doba obou sezón.</li>
+          <li><b>Klubové logo</b> v klubové červené a jeho 3D cedule s míčkem, který se otáčí.</li>
+          <li>Hala, areál a zázemí na skutečných fotkách, služby, novinky a kontakt s odkazy na Mapy.cz a Google Maps.</li>
+          <li>Funguje na počítači, tabletu i mobilu.</li>
+        </ul>
+      </section>
+      <section class="panel q">
+        <h2>Co ještě potřebujeme ověřit</h2>
+        <ul>
+          <li><b>Zimní ceník:</b> web uvádí 520 / 560 / 620 Kč (víkend 550 Kč), rezervační systém dnes ukazuje 490 / 540 / 600 Kč (víkend 520 Kč).</li>
+          <li><b>Sobota v zimě:</b> provozní doba 10–18 h, ceník uvádí 10–20 h.</li>
+          <li><b>E-mail:</b> tenistami-reporyje@seznam.cz, nebo jiras.tami@seznam.cz?</li>
+          <li><b>Obsazenost</b> je v návrzích ukázková. Po výběru návrhu ji napojíme na rezervační systém.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Tenis Tami Řeporyje · Jáchymovská 613/1, Praha 5 – Řeporyje</span>
+    <span>Návrhy nového webu · říjen 2026</span>
+  </div>
+</footer>
+
+<script src="assets/js/tami-logo-micek.js" defer></script>
+</body>
+</html>
